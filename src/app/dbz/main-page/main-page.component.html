@@ -1,2 +1,53 @@
-<p>Dragon Ball Z</p>
+
+<h1>Dragon Ball</h1>
 <hr>
+
+<div class="row">
+
+
+
+  <div class="col">
+    <h3>Personajes</h3>
+    <hr>
+    <ul>
+        <li *ngFor="let person of personajes">
+          {{person.nombre}} - {{person.poder | number}}
+        </li>
+    </ul>
+  </div>
+
+
+
+  <div class="col">
+    <h3>Agregar</h3>
+    <hr>
+
+
+      <form (submit)="agregar()">
+        <input
+            type="text"
+            placeholder="Nombre"
+            name="nombre"
+            [(ngModel)]="nuevo.nombre"
+             />
+        <input
+            type="number"
+            placeholder="Poder"
+            name="poder"
+            [(ngModel)]="nuevo.poder"
+            />
+
+        <button type="submit">
+            Agregar
+        </button>
+      </form>
+
+  </div>
+
+</div>
+
+<!-- [value] - Las llaves cuadradas con importantes para establecer alguna propiedad a el objeto -->
+<!-- (click) --- Parentesis es para emitir o escuchar eventos  -->
+<!-- [value]= "nuevo.nombre"
+(input)="cambiarNombre($event)" -->
+<!-- [()] -- Escuchar y emitir el evento  -->
