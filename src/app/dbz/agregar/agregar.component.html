@@ -1,0 +1,14 @@
+<h3>Agregar</h3>
+<hr>
+
+<!-- La directiva ngmodel vincula el valor de los controles HTML (entrada, selección, area de texto) a los datos de la aplicación.
+con la directiva ng-model, puede vincular el valor de un campo de entrada a una variable creada en angular.  -->
+
+<form (submit)="agregar()">
+  <input type="text" placeholder="nombre" name="nombre" [(ngModel)]="nuevo.nombre" />
+  <input type="number" placeholder="Poder" name="poder" [(ngModel)]="nuevo.poder" />
+
+  <button type="submit">
+    Agregar
+  </button>
+</form>

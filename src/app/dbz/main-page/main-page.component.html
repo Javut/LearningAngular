@@ -5,43 +5,21 @@
 <div class="row">
 
 
+  <!-- [Personajes or data] -- Es una propiedad de app-personajes -->
+  <!-- personajes -- se encuentra en mi main-page.component.ts -->
 
   <div class="col">
-    <h3>Personajes</h3>
-    <hr>
-    <ul>
-        <li *ngFor="let person of personajes">
-          {{person.nombre}} - {{person.poder | number}}
-        </li>
-    </ul>
+    <app-personajes [personajes]="personajes">
+    </app-personajes>
   </div>
 
 
 
   <div class="col">
-    <h3>Agregar</h3>
-    <hr>
-
-
-      <form (submit)="agregar()">
-        <input
-            type="text"
-            placeholder="Nombre"
-            name="nombre"
-            [(ngModel)]="nuevo.nombre"
-             />
-        <input
-            type="number"
-            placeholder="Poder"
-            name="poder"
-            [(ngModel)]="nuevo.poder"
-            />
-
-        <button type="submit">
-            Agregar
-        </button>
-      </form>
-
+    <app-agregar
+     [nuevo]="nuevo"
+     (onNuevoPersonaje)="agregarNuevoPersonaje($event)"
+     ></app-agregar>
   </div>
 
 </div>
