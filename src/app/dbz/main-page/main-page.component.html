@@ -5,11 +5,11 @@
 <div class="row">
 
 
-  <!-- [Personajes or data] -- Es una propiedad de app-personajes -->
+  <!-- [Personajes or data] -- Es una propiedad de app-personajes [personajes]="personajes"-->
   <!-- personajes -- se encuentra en mi main-page.component.ts -->
 
   <div class="col">
-    <app-personajes [personajes]="personajes">
+    <app-personajes>
     </app-personajes>
   </div>
 
@@ -18,12 +18,12 @@
   <div class="col">
     <app-agregar
      [nuevo]="nuevo"
-     (onNuevoPersonaje)="agregarNuevoPersonaje($event)"
      ></app-agregar>
   </div>
 
 </div>
 
+<!-- (onNuevoPersonaje)="agregarNuevoPersonaje($event)" -->
 <!-- [value] - Las llaves cuadradas con importantes para establecer alguna propiedad a el objeto -->
 <!-- (click) --- Parentesis es para emitir o escuchar eventos  -->
 <!-- [value]= "nuevo.nombre"
